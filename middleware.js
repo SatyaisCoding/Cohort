@@ -5,7 +5,7 @@
 // app.get("/health-check", function(req, res){
 //     //dp health check-up here
 
-//     const kidnyeId = req.query.kidnyeId;
+//     const kidneyId = req.query.kidnyeId;
 //     const username = req.header.username;
 //     const password = req.headers.password;
     
@@ -16,7 +16,7 @@
 //         return;
 //     }
 
-//     if(kidnyeId != 1 && kidnyeId !=2){
+//     if(kidneyId != 1 && kidneyId !=2){
 //         res.status(400).json({
 //             msg:"Wrogn inputs"
 //         });
@@ -99,5 +99,6 @@ app.get("/health-check", userMiddleware,  function(req,res){   // -> heart valid
 
 
 //  ************* Assignment ***********
+
 // 1 -> Count the number of request .
 // 2-> Find the avearge time your server is taking to handle the request
