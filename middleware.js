@@ -102,3 +102,35 @@ app.get("/health-check", userMiddleware,  function(req,res){   // -> heart valid
 
 // 1 -> Count the number of request .
 // 2-> Find the avearge time your server is taking to handle the request
+
+
+
+const express = require("express")
+const app = express();
+
+app.use(express.json());
+
+app.post("/health-check", function(req, res){
+    //kidney [1,2]
+    const  kidneys = req.body.kidneys;
+    const kidneyLength = kidneys.length;
+
+    res.send("you have" + kidneyLenght "Kidneys");
+});
+
+//global catches
+
+// This function is used to hide the confedential error message 
+// The above code is not correct and that will give some king of exception that lenght of the kidney is not found
+// ANd this exception is quite sensitive with respect to the data 
+// That's why global catches is used to hide the exception from users
+
+app.use(function(err, req, res, next){
+    res.json({
+        msg: "Sorry Something is up with our server"
+    })
+})
+
+app.listen(3000);  // this line is a kind of function calling 
+
+// this will reflect the code at port 3000 
