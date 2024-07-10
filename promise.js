@@ -71,6 +71,15 @@
     });
 
 
+// We can also write it with the help of async function
+
+createOrder(cart)
+ .then((orderId)=> proceedToPayment(orderId))
+  .then ((paymentInfo)=>showOrderSummary(paymentInfo))
+  .then((paymentInfo)=>updateWalletBalance(paymentInfo)); 
+
+//Hers's the muchh cleaner way to use Promise chaining using async function 
+// See, both the code will have same complexity , its up to you that how will you like to write it.
 
 // Whenever we are attachiong lots of .then() & lot of Callbacks() then what happes is that , we want to pipe the data (means that we are trying to execute callbacks one by one in a series like pipelines )
 // we want to the data will flow in the chain for that we have to take care that we have return something , then we will get our data properly in our chain.
